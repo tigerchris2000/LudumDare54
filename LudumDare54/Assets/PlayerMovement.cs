@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private Vector2 move;
-
+    private bool sneak = false;
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
@@ -19,13 +19,23 @@ public class PlayerMovement : MonoBehaviour
     void Update() {
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
+        sneak = Input.GetKey(KeyCode.LeftShift);
+
+        print(rb.velocity.magnitude);
     }
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         if(move.magnitude > 0) {
             rb.drag = 0;
-            rb.AddForce(move * acc);
-            if (rb.velocity.magnitude > speed) rb.velocity = rb.velocity.normalized * speed;
+            rb.AddForce(move.normalized * acc);
+            if (sneak) {
+                if (rb.velocity.magnitude > speed * 0.5f) {
+                    rb.velocity = rb.velocity.normalized * speed * 0.5f; 
+                } 
+            } else {
+                if (rb.velocity.magnitude > speed) {
+                    rb.velocity = rb.velocity.normalized * speed; 
+                }
+            }
         } else {
             rb.drag = dec;
         }
