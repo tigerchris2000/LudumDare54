@@ -33,7 +33,7 @@ public class LightDetection : MonoBehaviour
             Collider2D collider = rays[i].collider;
             if(collider != null) {
                 if (collider.CompareTag("Player")) {
-                    print(collider.tag);
+                    //print(collider.tag);
                 }
             }
        }
