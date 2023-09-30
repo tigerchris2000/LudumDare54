@@ -41,8 +41,6 @@ public class PlayerMovement : MonoBehaviour
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
         sneak = Input.GetKey(KeyCode.LeftShift);
-
-        // print(rb.velocity.magnitude);
         if (Input.GetKeyDown(KeyCode.G)) {
             Die();
         }
@@ -118,30 +116,35 @@ public class PlayerMovement : MonoBehaviour
                 RaycastHit2D ray4 = Physics2D.Raycast(transform.position - Vector3.Scale(vec, Vector2.one * 0.1f), vec, rachDistance, moveableObjects);
                 RaycastHit2D ray5 = Physics2D.Raycast(transform.position - Vector3.Scale(vec, Vector2.one * 0.2f), vec, rachDistance, moveableObjects);
                 if(ray1.collider != null) {
+                    if (!ray1.collider.CompareTag("MoveableObject")) return;
                     pull = true;
                     speed = maxSpeed / 2;
                     pulledObject = ray1.collider.gameObject;
                     pulledObjectDir = vec;
                 }
                 if(ray2.collider != null) {
+                    if (!ray2.collider.CompareTag("MoveableObject")) return;
                     pull = true;
                     speed = maxSpeed / 2;
                     pulledObject = ray2.collider.gameObject;
                     pulledObjectDir = vec;
                 }
                 if(ray3.collider != null) {
+                    if (!ray3.collider.CompareTag("MoveableObject")) return;
                     pull = true;
                     speed = maxSpeed / 2;
                     pulledObject = ray3.collider.gameObject;
                     pulledObjectDir = vec;
                 }
                 if(ray4.collider != null) {
+                    if (!ray4.collider.CompareTag("MoveableObject")) return;
                     pull = true;
                     speed = maxSpeed / 2;
                     pulledObject = ray4.collider.gameObject;
                     pulledObjectDir = vec;
                 }
                 if(ray5.collider != null) {
+                    if (!ray5.collider.CompareTag("MoveableObject")) return;
                     pull = true;
                     speed = maxSpeed / 2;
                     pulledObject = ray5.collider.gameObject;
