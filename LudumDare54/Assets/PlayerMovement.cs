@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         print(rb.velocity.magnitude);
     }
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         if(move.magnitude > 0) {
             rb.drag = 0;
             rb.AddForce(move.normalized * acc);
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
                 if (rb.velocity.magnitude > speed) {
                     rb.velocity = rb.velocity.normalized * speed; 
                 }
-
             }
         } else {
             rb.drag = dec;
