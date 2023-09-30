@@ -31,9 +31,13 @@ public class LightDetection : MonoBehaviour
     void CheckRays() { 
        for(int i = 0; i < rays.Count; i++) {
             Collider2D collider = rays[i].collider;
+                                
+
             if(collider != null) {
+               
                 if (collider.CompareTag("Player")) {
-                    //print(collider.tag);
+                     Debug.Log("DIE");
+                    //player.GetComponent<PlayerMovement>().Die();
                 }
             }
        }
