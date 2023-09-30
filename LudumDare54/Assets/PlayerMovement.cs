@@ -5,27 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float acc;
-    [SerializeField]
-    private float dec;
+    [SerializeField] private float speed;
+    [SerializeField] private float acc;
+    [SerializeField] private float dec;
     private GameObject player;
     private Rigidbody2D rb;
     private Vector2 move;
-    void Start()
-    {
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
-        print(move);
     }
     void FixedUpdate()
     {
