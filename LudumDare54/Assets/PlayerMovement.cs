@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Die() {
 	    StartCoroutine(redFlash());
-	    // Do more dying...
     }
 
     IEnumerator redFlash() {
@@ -81,13 +80,7 @@ public class PlayerMovement : MonoBehaviour
             redFlashImage.color = c;
             yield return new WaitForSeconds(0.01f);
         }
-        for (int i = 0; i < stepCount; i++) {
-            Color c = redFlashImage.color;
-	        c.a -= (float)(1f/stepCount);
-            redFlashImage.color = c;
-            yield return new WaitForSeconds(0.01f);
-        }
-        redFlashImage.gameObject.SetActive(false);
+        SceneManager.LoadScene("DeathImage");
     }
     void GetInput() {
         move.x = Input.GetAxisRaw("Horizontal");
