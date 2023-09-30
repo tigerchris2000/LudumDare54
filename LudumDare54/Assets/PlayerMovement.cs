@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         move.y = Input.GetAxisRaw("Vertical");
         sneak = Input.GetKey(KeyCode.LeftShift);
 
-        print(rb.velocity.magnitude);
+        // print(rb.velocity.magnitude);
         if (Input.GetKeyDown(KeyCode.G)) {
             Die();
         }
