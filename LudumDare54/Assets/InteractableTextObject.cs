@@ -14,6 +14,13 @@ public class InteractableTextObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
+            Debug.Log("Player has entered the range.");
+            playerIsInRange = true;
+        }
+    }
+    void OnTriggerStay2D(Collider2D other) {
+        if(other.CompareTag("Player")) {
+            Debug.Log("Player has entered the range.");
             playerIsInRange = true;
         }
     }
@@ -30,8 +37,10 @@ public class InteractableTextObject : MonoBehaviour
     void ToggleNoteDisplay() {
         if(!noteActive) {
             DisplayNote();
+            Time.timeScale = 0;
         } else {
             HideNote();
+            Time.timeScale = 1;
         }
         noteActive = !noteActive;
     }
@@ -39,7 +48,7 @@ public class InteractableTextObject : MonoBehaviour
         switch(textID) {             
             default:
             case -1: HideNote(); break;
-            case 1: noteImage.sprite = notes[textID]; break;
+            case 1: noteImage.sprite = notes[textID-1]; break;
         }
         noteImage.gameObject.SetActive(true);
     }
