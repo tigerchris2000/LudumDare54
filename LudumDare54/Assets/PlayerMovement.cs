@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
         rb = player.GetComponent<Rigidbody2D>();
         maxSpeed = speed;
     }
-
-    // Update is called once per frame
     void Update() {
         GetInput();
         Pulling();
@@ -55,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
         } else {
             rb.drag = dec;
         }
+    }
+    void Die() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void GetInput() {
         move.x = Input.GetAxisRaw("Horizontal");

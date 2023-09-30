@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class InteractableTextObject : MonoBehaviour
 {
     bool playerIsInRange = false; 
-    bool noteActive = false;
+    bool textActive = false;
+    [SerializeField] int noteNumber = -1;
     [SerializeField] int textID = -1;
-    [SerializeField] Sprite[] notes;
-    [SerializeField] Image noteImage;
+    [SerializeField] Image textImage;
+    [SerializeField] Sprite[] texts;
+
+    void Start() {
+        /* Maybe...
+        int[] noteTextIDs = {1, 2, 3, 4, 5};
+        for (int i = 0; i < noteTextIDs.Length; i++) {
+            if (textID == noteTextIDs[i]) {
+                noteNumber = i;
+            }
+        } */
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
-            Debug.Log("Player has entered the range.");
-            playerIsInRange = true;
-        }
-    }
-    void OnTriggerStay2D(Collider2D other) {
-        if(other.CompareTag("Player")) {
-            Debug.Log("Player has entered the range.");
             playerIsInRange = true;
         }
     }
@@ -31,28 +36,31 @@ public class InteractableTextObject : MonoBehaviour
     }
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space) && playerIsInRange) {
-            ToggleNoteDisplay();
+            ToggleTextDisplay();
+            if (noteNumber != -1 && !STATICStatTracker.noteStatuses.Get(noteNumber)) {
+                STATICStatTracker.noteStatuses.Set(noteNumber, true);
+            }
         }
     }
-    void ToggleNoteDisplay() {
-        if(!noteActive) {
-            DisplayNote();
+    void ToggleTextDisplay() {
+        if(!textActive) {
+            DisplayTextImage();
             Time.timeScale = 0;
         } else {
-            HideNote();
+            HideTextImage();
             Time.timeScale = 1;
         }
-        noteActive = !noteActive;
+        textActive = !textActive;
     }
-    void DisplayNote() {
+    void DisplayTextImage() {
         switch(textID) {             
             default:
-            case -1: HideNote(); break;
-            case 1: noteImage.sprite = notes[textID-1]; break;
+            case -1: HideTextImage(); break;
+            case 1: textImage.sprite = texts[textID-1]; break;
         }
-        noteImage.gameObject.SetActive(true);
+        textImage.gameObject.SetActive(true);
     }
-    void HideNote() {
-        noteImage.gameObject.SetActive(false);
+    void HideTextImage() {
+        textImage.gameObject.SetActive(false);
     }
 }
