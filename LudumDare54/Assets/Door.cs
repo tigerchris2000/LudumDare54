@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractive
 {
+    private bool open = false;
     public void Change()
     {
-        if(GetComponent<SpriteRenderer>().color == Color.red)
+        if(!open) {
+            open = !open;
             GetComponent<SpriteRenderer>().color = Color.green;
-        else 
+        }
+        else {
+            open = !open;
             GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        GetComponent<BoxCollider2D>().isTrigger = !GetComponent<BoxCollider2D>().isTrigger;
     }
 }
