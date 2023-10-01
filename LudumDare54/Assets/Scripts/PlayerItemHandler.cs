@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerItemHandler : MonoBehaviour
 {
     string currentItem = "";
-    [SerializeField] List<GameObject> itemList;
+    [SerializeField] List<GameObject> itemGameObjectsList;
 
     public void SetCurrentItem(string s) {currentItem = s;}
     public string GetCurrentItem() {return currentItem;}
