@@ -32,6 +32,18 @@ public class PlayerMovement : MonoBehaviour
     private bool isMovEnabled = true;
     private Dir looking;
     private Vector3 pulledObjectDir;
+    [Header("Animations")]
+    [SerializeField] private float animSpeed = 1f;
+    [SerializeField] private Sprite[] idle;
+    [SerializeField] private Sprite[] up;
+    [SerializeField] private Sprite[] down;
+    [SerializeField] private Sprite[] left;
+    [SerializeField] private Sprite[] right;
+
+    private int count = 0;
+    private float animTimer = 0;
+    private Dir prev = Dir.DOWN; 
+    
     
 
     void Start() {
@@ -48,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         }
         GetInput();
         Pulling();
+        Animation();
     }
     void FixedUpdate() {
         if(move.magnitude > 0) {
@@ -174,5 +187,39 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SetMovementEnabled(bool target) {
         isMovEnabled = target;
+    }
+    void Animation() {
+        if (prev != looking) count = 0;
+        if (move.magnitude > 0) {
+            switch (looking) {
+                case Dir.UP:
+                    if (count >= up.Length) count = 0;
+                    gameObject.GetComponent<SpriteRenderer>().sprite = up[count];
+                    break;
+                case Dir.DOWN:
+                    if (count >= down.Length) count = 0;
+                    gameObject.GetComponent<SpriteRenderer>().sprite = down[count];
+                    break;
+                case Dir.LEFT:
+                    if (count >= left.Length) count = 0;
+                    gameObject.GetComponent<SpriteRenderer>().sprite = left[count];
+                    break;
+                case Dir.RIGHT:
+                    if (count >= right.Length) count = 0;
+                    gameObject.GetComponent<SpriteRenderer>().sprite = right[count];
+                    break;
+                default:
+                    if (count >= idle.Length) count = 0;
+                    gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
+                    break;
+            }
+            prev = looking;
+        } else {
+            gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
+        }
+        if(Time.time > animTimer) {
+            count++;
+            animTimer = Time.time + animSpeed;
+        }
     }
 }
