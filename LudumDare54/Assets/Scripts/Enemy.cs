@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private bool detected = false;
     private Vector3 soundSource;
     private float timeSinceDetected = 0;
+    private float timer = 0;
 
             
     void Start() {
@@ -83,33 +84,40 @@ public class Enemy : MonoBehaviour
         Vector3 rot = transform.rotation.eulerAngles;
         Vector3 dir = soundSource - transform.position;
         vec.z = Vector3.Angle(dir, Vector3.up); ;
-        
-        if(vec.z - rot.z > rotatingSpeed * Time.deltaTime) {
-            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
-        }else if(vec.z - rot.z < - rotatingSpeed * Time.deltaTime){
-            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
-        }
-        rot = vec;
+        if (dir.x > 0) vec.z = 360 - vec.z;
+        if (vec.z - rot.z > 0 && vec.z - rot.z < 180)
+            vec.z = rot.z + Time.deltaTime * rotatingSpeed;
+        else if (vec.z - rot.z < 0 && vec.z - rot.z < -180)
+            vec.z = rot.z + Time.deltaTime * rotatingSpeed;
+        else
+            vec.z = rot.z - Time.deltaTime * rotatingSpeed;
+
+        transform.rotation = Quaternion.Euler(vec);
         rotated = true;
     }
     void rotateBack() {
         Vector3 vec = Vector3.zero;
         Vector3 rot = transform.rotation.eulerAngles;
         Vector3 dir = movePoints[next] - transform.position;
-        vec.z = Vector3.Angle(dir, Vector3.up);
-        
-        if(vec.z - rot.z > rotatingSpeed * Time.deltaTime) {
-            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
-        }else if(vec.z - rot.z < - rotatingSpeed * Time.deltaTime){
-            vec.z = rot.z + rotatingSpeed * Time.deltaTime;
-        } else{
+        vec.z = Vector3.Angle(dir, Vector3.up); ;
+        if (dir.x > 0) vec.z = 360 - vec.z;
+        if (vec.z - rot.z > 0 && vec.z - rot.z < 180)
+            vec.z = rot.z + Time.deltaTime * rotatingSpeed;
+        else if (vec.z - rot.z < 0 && vec.z - rot.z < -180)
+            vec.z = rot.z + Time.deltaTime * rotatingSpeed;
+        else
+            vec.z = rot.z - Time.deltaTime * rotatingSpeed;
+
+        transform.rotation = Quaternion.Euler(vec);
+        if (Vector3.Distance(transform.rotation.eulerAngles, movePoints[next]) < 2f ||
+            Vector3.Distance(transform.rotation.eulerAngles, movePoints[next]) > 358f) {
             rotated = false;
         }
-        rot = vec;
     }
     public void detectSound(GameObject gameObject) {
         detected = true;
         soundSource = gameObject.transform.position;
         timeSinceDetected = Time.time + ignoreSoundTime;
+        timer = 0;
     }
 }

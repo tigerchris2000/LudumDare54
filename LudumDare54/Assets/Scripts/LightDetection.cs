@@ -34,9 +34,8 @@ public class LightDetection : MonoBehaviour
                                 
 
             if(collider != null) {
-               
                 if (collider.CompareTag("Player")) {
-                     Debug.Log("DIE");
+                     //Debug.Log("DIE");
                     //player.GetComponent<PlayerMovement>().Die();
                 }
             }
