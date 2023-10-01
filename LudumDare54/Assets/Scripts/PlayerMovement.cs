@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 move;
     private bool sneak = false;
     private bool pull = false;
+    private bool isMovEnabled = false;
     private Dir looking;
     private Vector3 pulledObjectDir;
     
@@ -38,9 +39,15 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed = speed;
     }
     void Update() {
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.y = Input.GetAxisRaw("Vertical");
+        if (isMovEnabled) {
+            move.x = Input.GetAxisRaw("Horizontal");
+            move.y = Input.GetAxisRaw("Vertical");
+        } else {
+            move = Vector2.zero;
+        }
+        
         sneak = Input.GetKey(KeyCode.LeftShift);
+        // TO DELETE, DEBUG ONLY
         if (Input.GetKeyDown(KeyCode.G)) {
             Die();
         }
@@ -160,5 +167,8 @@ public class PlayerMovement : MonoBehaviour
                 pulledObject.transform.position = transform.position + Vector3.Scale(pulledObjectDir , pulledObject.transform.localScale * 0.5f + Vector3.one * pullingSpace) ; 
             }
         }
+    }
+    public void SetMovementEnabled(bool target) {
+        isMovEnabled = target;
     }
 }
