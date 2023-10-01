@@ -10,6 +10,14 @@ public class Enemy : MonoBehaviour
     private bool reverse = false;
     private int next = 0;
 
+    [Header("Sound Detection")]
+    [SerializeField] private float rotatingSpeed = 1f;
+    [SerializeField] private float ignoreSoundTime = 0.5f;
+    private bool rotated = false;
+    private bool detected = false;
+    private Vector3 soundSource;
+    private float timeSinceDetected = 0;
+
             
     void Start() {
         movePoints.Add(transform.position);
@@ -21,7 +29,22 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveToNext();        
+        DoSomething();
+    }
+    void DoSomething() {
+        if (detected)
+        {
+            rotateTowardsSound();
+            if (timeSinceDetected < Time.time)
+                detected = false;
+        }
+        else if (rotated) {
+            rotateBack(); 
+        }
+        else
+        {
+            moveToNext();
+        }
     }
     void moveToNext() {
         if( Vector3.Distance(transform.position,movePoints[next]) < offset) {
@@ -54,5 +77,39 @@ public class Enemy : MonoBehaviour
         vec.z = Vector3.Angle(target, Vector3.up); ;
         if (target.x < 0) vec.z *= -1; vec.z *= -1;
         transform.rotation = Quaternion.Euler(vec);
+    }
+    void rotateTowardsSound() {
+        Vector3 vec = Vector3.zero;
+        Vector3 rot = transform.rotation.eulerAngles;
+        Vector3 dir = soundSource - transform.position;
+        vec.z = Vector3.Angle(dir, Vector3.up); ;
+        
+        if(vec.z - rot.z > rotatingSpeed * Time.deltaTime) {
+            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
+        }else if(vec.z - rot.z < - rotatingSpeed * Time.deltaTime){
+            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
+        }
+        rot = vec;
+        rotated = true;
+    }
+    void rotateBack() {
+        Vector3 vec = Vector3.zero;
+        Vector3 rot = transform.rotation.eulerAngles;
+        Vector3 dir = movePoints[next] - transform.position;
+        vec.z = Vector3.Angle(dir, Vector3.up);
+        
+        if(vec.z - rot.z > rotatingSpeed * Time.deltaTime) {
+            vec.z = rot.z + rotatingSpeed * Time.deltaTime; 
+        }else if(vec.z - rot.z < - rotatingSpeed * Time.deltaTime){
+            vec.z = rot.z + rotatingSpeed * Time.deltaTime;
+        } else{
+            rotated = false;
+        }
+        rot = vec;
+    }
+    public void detectSound(GameObject gameObject) {
+        detected = true;
+        soundSource = gameObject.transform.position;
+        timeSinceDetected = Time.time + ignoreSoundTime;
     }
 }
