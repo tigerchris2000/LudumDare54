@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dec;
     [SerializeField] private float rachDistance;
     [SerializeField] private float pullingSpace;
+    [SerializeField] private float soundRange;
     [SerializeField] private LayerMask moveableObjects;
     [SerializeField] Image redFlashImage;
     private float maxSpeed;
@@ -90,8 +91,11 @@ public class PlayerMovement : MonoBehaviour
             if (move.y > 0) looking = Dir.UP;
             if (move.y < 0) looking = Dir.DOWN;
             sneak = Input.GetKey(KeyCode.LeftShift);
-            if(move.magnitude > 0)
-                GetComponent<SoundScript>().send(5f);
+            if(move.magnitude > 0) {
+                float dist = soundRange;
+                if (sneak) dist = dist * 0.5f;
+                GetComponent<SoundScript>().send(dist);
+            }
         } else {
             move = Vector2.zero;
         }
