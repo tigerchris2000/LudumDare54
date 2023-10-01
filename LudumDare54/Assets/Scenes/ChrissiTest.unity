@@ -597,6 +597,7 @@ MonoBehaviour:
   rayCount: 50
   lights:
   - {fileID: 2081008787}
+  suriveTime: 0.3
 --- !u!114 &1432377886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +784,7 @@ MonoBehaviour:
   dec: 100
   rachDistance: 0.8
   pullingSpace: 0.8
+  soundRange: 3
   moveableObjects:
     serializedVersion: 2
     m_Bits: 128

@@ -12,6 +12,12 @@ public class LightDetection : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private GameObject[] lights;
+    [SerializeField]
+    private float suriveTime = 0.3f;
+
+    private float hits = 0;
+    private bool gotHit = false;
+
 
     private List<RaycastHit2D> rays = new List<RaycastHit2D>();
 
@@ -27,16 +33,25 @@ public class LightDetection : MonoBehaviour
     {
         CalcRays();
         CheckRays();
+        CheckDeath();
     }
-    void CheckRays() { 
-       for(int i = 0; i < rays.Count; i++) {
+    void CheckDeath() {
+        if(hits > suriveTime) {
+            print("death");
+        }
+    }
+    void CheckRays() {
+        if (!gotHit) {
+            hits = 0;
+        }
+        gotHit = false; 
+        for(int i = 0; i < rays.Count; i++) {
             Collider2D collider = rays[i].collider;
-                                
-
             if(collider != null) {
                 if (collider.CompareTag("Player")) {
-                     //Debug.Log("DIE");
-                    //player.GetComponent<PlayerMovement>().Die();
+                    gotHit = true;
+                    hits += Time.deltaTime;
+                    return;
                 }
             }
        }

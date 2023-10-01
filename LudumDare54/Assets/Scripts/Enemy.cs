@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour
     private bool detected = false;
     private Vector3 soundSource;
     private float timeSinceDetected = 0;
-    private float timer = 0;
 
             
     void Start() {
@@ -118,6 +117,5 @@ public class Enemy : MonoBehaviour
         detected = true;
         soundSource = gameObject.transform.position;
         timeSinceDetected = Time.time + ignoreSoundTime;
-        timer = 0;
     }
 }
