@@ -24,7 +24,6 @@ public class Button : MonoBehaviour
         if(pressedF && timer < Time.time) {
             pressedF = false;
         }
-        
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
