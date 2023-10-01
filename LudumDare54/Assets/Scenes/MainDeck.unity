@@ -12405,7 +12405,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2194673986010561759, guid: 378567e5665bfb340bab43a03f21ea40, type: 3}
   m_PrefabInstance: {fileID: 1291604829}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &1299053249
 GameObject:
   m_ObjectHideFlags: 0
@@ -12630,9 +12629,6 @@ Transform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1430904762
-=======
---- !u!43 &1757545906
->>>>>>> Stashed changes
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12797,7 +12793,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
-<<<<<<< Updated upstream
 --- !u!1001 &1462689430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13936,8 +13931,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1923545015301884217, guid: 419585594e69a1d4eb87dffe7a26575b, type: 3}
   m_PrefabInstance: {fileID: 333301933}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> Stashed changes
 --- !u!43 &1911648396
 Mesh:
   m_ObjectHideFlags: 0
