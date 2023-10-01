@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 move;
     private bool sneak = false;
     private bool pull = false;
-    private bool isMovEnabled = false;
+    private bool isMovEnabled = true;
     private Dir looking;
     private Vector3 pulledObjectDir;
     
@@ -39,12 +39,6 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed = speed;
     }
     void Update() {
-        if (isMovEnabled) {
-            move.x = Input.GetAxisRaw("Horizontal");
-            move.y = Input.GetAxisRaw("Vertical");
-        } else {
-            move = Vector2.zero;
-        }
         
         sneak = Input.GetKey(KeyCode.LeftShift);
         // TO DELETE, DEBUG ONLY
@@ -88,13 +82,19 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene("DeathImage");
     }
     void GetInput() {
-        move.x = Input.GetAxisRaw("Horizontal");
-        if (move.x > 0) looking = Dir.RIGHT;
-        if (move.x < 0) looking = Dir.LEFT;
-        move.y = Input.GetAxisRaw("Vertical");
-        if (move.y > 0) looking = Dir.UP;
-        if (move.y < 0) looking = Dir.DOWN;
-        sneak = Input.GetKey(KeyCode.LeftShift);
+        if (isMovEnabled) {
+            move.x = Input.GetAxisRaw("Horizontal");
+            if (move.x > 0) looking = Dir.RIGHT;
+            if (move.x < 0) looking = Dir.LEFT;
+            move.y = Input.GetAxisRaw("Vertical");
+            if (move.y > 0) looking = Dir.UP;
+            if (move.y < 0) looking = Dir.DOWN;
+            sneak = Input.GetKey(KeyCode.LeftShift);
+            if(move.magnitude > 0)
+                GetComponent<SoundScript>().send(5f);
+        } else {
+            move = Vector2.zero;
+        }
     }
     void Pulling() {
         if (!pull) {
