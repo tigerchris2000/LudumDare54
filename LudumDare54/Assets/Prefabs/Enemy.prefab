@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8343759808956815053}
   - {fileID: 3876025974928435804}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6031993940088767047
 SpriteRenderer:
@@ -178,7 +178,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 63.714035
   m_PointLightOuterAngle: 63.714035
-  m_PointLightInnerRadius: 0
+  m_PointLightInnerRadius: 6
   m_PointLightOuterRadius: 6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
