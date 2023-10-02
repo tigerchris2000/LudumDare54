@@ -161,7 +161,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 119624
+  m_InstanceId: 50204
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -181,8 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   rayCount: 50
-  lights:
-  - {fileID: 0}
+  lights: []
   suriveTime: 0.3
 --- !u!114 &47637493344296942
 MonoBehaviour:
@@ -217,9 +216,27 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 204a6cd5c52a48543ad7ec46609bb2ad, type: 3}
   - {fileID: 21300000, guid: 80b3cba7df32c2d40a978c4e4ae9824f, type: 3}
   - {fileID: 21300000, guid: d12a2cf550472e942b238017ed277140, type: 3}
-  down: []
-  left: []
-  right: []
+  down:
+  - {fileID: 21300000, guid: 018281b665cfce44583e70b929bdf407, type: 3}
+  - {fileID: 21300000, guid: 7bc7d444d6eb1214aaab1e190249f2de, type: 3}
+  - {fileID: 21300000, guid: 0217eb6467de2d645874a28b107ae89a, type: 3}
+  - {fileID: 21300000, guid: 10be2f0742111e54f95f8d7fecdf5b7e, type: 3}
+  - {fileID: 21300000, guid: 841a6854026a120458c56d94db5fd03f, type: 3}
+  - {fileID: 21300000, guid: 336180a68111cb649832fa4d41156dd4, type: 3}
+  - {fileID: 21300000, guid: 023618ec90382334ea3f8d760f969bca, type: 3}
+  - {fileID: 21300000, guid: 1c85f76aa331c8442854ecda4e805ce2, type: 3}
+  left:
+  - {fileID: 21300000, guid: 592d829ac740f3d45b3f7b8dc3127ede, type: 3}
+  - {fileID: 21300000, guid: d1566674bcfb9f44587b213eecfb8731, type: 3}
+  - {fileID: 21300000, guid: 811b6b8f9d6fd604b80be8985194bb61, type: 3}
+  - {fileID: 21300000, guid: 83d7bd0be97c1b945ae0f698614b650c, type: 3}
+  - {fileID: 21300000, guid: 89fe1e76392795e4fa2220071e20efbc, type: 3}
+  right:
+  - {fileID: 21300000, guid: c3f288dcf5cc290448b1ffb2335390fa, type: 3}
+  - {fileID: 21300000, guid: 975dbac70cffa5f47b23338675894cc1, type: 3}
+  - {fileID: 21300000, guid: 8db753fc36b1d1c43ae457c5fc4f1620, type: 3}
+  - {fileID: 21300000, guid: fac63285890791c4b8aae2efab1ad85b, type: 3}
+  - {fileID: 21300000, guid: 725afbf736474274c9e7e8744c11e426, type: 3}
 --- !u!50 &2870507770150803394
 Rigidbody2D:
   serializedVersion: 4
