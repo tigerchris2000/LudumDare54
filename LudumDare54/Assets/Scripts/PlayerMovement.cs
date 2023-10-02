@@ -193,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
     void Animation() {
         if (prev != looking) count = 0;
         if (move.magnitude > 0) {
-            print("if1");
             switch (looking) {
                 case Dir.UP:
                     if (count >= up.Length) count = 0;

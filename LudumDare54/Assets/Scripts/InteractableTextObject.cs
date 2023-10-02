@@ -47,6 +47,7 @@ public class InteractableTextObject : MonoBehaviour
             default:
             case -1: HideTextImage(); break;
             case 3: tmpText.SetText(STATICStrings.note3Text); break;
+            case 4: tmpText.SetText(STATICStrings.note4Text); break;
         }
         textImage.gameObject.SetActive(true);
     }
