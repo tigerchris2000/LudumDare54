@@ -11,18 +11,8 @@ public class InteractableTextObject : MonoBehaviour
     bool textActive = false;
     [SerializeField] int noteNumber = -1;
     [SerializeField] int textID = -1;
+    [SerializeField] TextMeshProUGUI tmpText;
     [SerializeField] Image textImage;
-    [SerializeField] Sprite[] texts;
-
-    void Start() {
-        /* Maybe...
-        int[] noteTextIDs = {1, 2, 3, 4, 5};
-        for (int i = 0; i < noteTextIDs.Length; i++) {
-            if (textID == noteTextIDs[i]) {
-                noteNumber = i;
-            }
-        } */
-    }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")) {
@@ -56,7 +46,7 @@ public class InteractableTextObject : MonoBehaviour
         switch(textID) {             
             default:
             case -1: HideTextImage(); break;
-            case 1: textImage.sprite = texts[textID-1]; break;
+            case 3: tmpText.SetText(STATICStrings.note3Text); break;
         }
         textImage.gameObject.SetActive(true);
     }
