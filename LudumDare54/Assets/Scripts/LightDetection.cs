@@ -15,7 +15,7 @@ public class LightDetection : MonoBehaviour
     [SerializeField]
     private GameObject[] lights;
     [SerializeField]
-    private float suriveTime = 0.3f;
+    private float suriveTime = 0.2f;
     private Camera cam;
     private float camZoom;
     Image redFlashImage;
