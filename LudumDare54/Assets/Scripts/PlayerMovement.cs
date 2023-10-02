@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxSpeed;
     private GameObject player;
     private GameObject pulledObject;
+    private GameObject particleSystem; 
     private Rigidbody2D rb;
     private Vector2 move;
     private bool sneak = false;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMovEnabled = true;
     private Dir looking;
     private Vector3 pulledObjectDir;
+    private Camera cam;
     [Header("Animations")]
     [SerializeField] private float animSpeed = 1f;
     [SerializeField] private Sprite[] idle;
@@ -49,10 +51,14 @@ public class PlayerMovement : MonoBehaviour
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
+        particleSystem = transform.GetChild(0).gameObject;
         maxSpeed = speed;
+        cam = Camera.main;
     }
     void Update() {
-        
+        Vector3 pos = transform.position;
+        pos.z = -10;
+        cam.transform.position = pos;
         sneak = Input.GetKey(KeyCode.LeftShift);
         // TO DELETE, DEBUG ONLY
         if (Input.GetKeyDown(KeyCode.G)) {
@@ -195,27 +201,39 @@ public class PlayerMovement : MonoBehaviour
                 case Dir.UP:
                     if (count >= up.Length) count = 0;
                     gameObject.GetComponent<SpriteRenderer>().sprite = up[count];
+                    particleSystem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                    particleSystem.GetComponent<ParticleSystem>().startLifetime = 0.3f * (rb.velocity.magnitude / speed);
                     break;
                 case Dir.DOWN:
                     if (count >= down.Length) count = 0;
                     gameObject.GetComponent<SpriteRenderer>().sprite = down[count];
+                    particleSystem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                    particleSystem.GetComponent<ParticleSystem>().startLifetime = 0.3f * (rb.velocity.magnitude / speed);
                     break;
                 case Dir.LEFT:
                     if (count >= left.Length) count = 0;
                     gameObject.GetComponent<SpriteRenderer>().sprite = left[count];
+                    particleSystem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
+                    particleSystem.GetComponent<ParticleSystem>().startLifetime = 0.3f * (rb.velocity.magnitude / speed);
                     break;
                 case Dir.RIGHT:
                     if (count >= right.Length) count = 0;
                     gameObject.GetComponent<SpriteRenderer>().sprite = right[count];
+                    particleSystem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                    particleSystem.GetComponent<ParticleSystem>().startLifetime = 0.3f * (rb.velocity.magnitude / speed);
                     break;
                 default:
                     if (count >= idle.Length) count = 0;
                     gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
+                    particleSystem.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                    particleSystem.GetComponent<ParticleSystem>().startLifetime = 0.3f * (rb.velocity.magnitude / speed);
                     break;
             }
             prev = looking;
+            particleSystem.SetActive(true);
         } else {
             gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
+            particleSystem.SetActive(false);
         }
         if(Time.time > animTimer) {
             count++;

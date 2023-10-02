@@ -14,6 +14,8 @@ public class LightDetection : MonoBehaviour
     private GameObject[] lights;
     [SerializeField]
     private float suriveTime = 0.3f;
+    private Camera cam;
+    private float camZoom;
 
     private float hits = 0;
     private bool gotHit = false;
@@ -24,6 +26,8 @@ public class LightDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+        camZoom = cam.orthographicSize;
         player = GameObject.FindGameObjectWithTag("Player");
         lights = GameObject.FindGameObjectsWithTag("Light");
     }
@@ -39,6 +43,7 @@ public class LightDetection : MonoBehaviour
         if(hits > suriveTime) {
             print("death");
         }
+        cam.orthographicSize = camZoom - (hits / suriveTime)*0.25f;
     }
     void CheckRays() {
         if (!gotHit) {
