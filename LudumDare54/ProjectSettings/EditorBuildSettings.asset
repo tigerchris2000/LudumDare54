@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: edbe116f8c4ca4f4489f8c9a20942901
   - enabled: 1
     path: Assets/Scenes/DeathImage.unity
     guid: a8fe3a78da1f8df46a4901ea23bb9bbd
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: edbe116f8c4ca4f4489f8c9a20942901
-  - enabled: 1
-    path: Assets/Scenes/LinusTest.unity
-    guid: e9e86f5750aba51409e6145d545152da
-  - enabled: 1
     path: Assets/Scenes/StartFR.unity
     guid: 90e1363947d28e0478e588c3bcff699d
-  - enabled: 1
-    path: Assets/Scenes/MainDeck.unity
-    guid: 45ac0fd1cb990dc42a896586bfddfe34
   - enabled: 1
     path: Assets/Scenes/Area2.unity
     guid: ae8de303626febb4485b6dd2b1cfc55e
   - enabled: 1
     path: Assets/Scenes/Ende.unity
     guid: b714e0beb204d9d439ccb8c6f628f32c
+  - enabled: 0
+    path: Assets/Scenes/MainDeck.unity
+    guid: 45ac0fd1cb990dc42a896586bfddfe34
+  - enabled: 0
+    path: Assets/Scenes/LinusTest.unity
+    guid: e9e86f5750aba51409e6145d545152da
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
