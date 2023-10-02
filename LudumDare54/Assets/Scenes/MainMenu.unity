@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -503.00003, y: -62.90245}
+  m_AnchoredPosition: {x: -590.00006, y: -30.90249}
   m_SizeDelta: {x: 318.6583, y: 94.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966063885175639
@@ -682,7 +682,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20aa445101a0db7438f77752411a83be, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 4926804000586491720, guid: 20aa445101a0db7438f77752411a83be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1662966064324957456
@@ -837,7 +837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -502.99997, y: -224.80478}
+  m_AnchoredPosition: {x: -590, y: -192.80482}
   m_SizeDelta: {x: 318.6518, y: 94.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966064324957463
@@ -941,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504.82, y: -348.5}
+  m_AnchoredPosition: {x: -589, y: -339}
   m_SizeDelta: {x: 308.0975, y: 91.4062}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966064802239002
@@ -1077,8 +1077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.7639, y: -25.2849}
-  m_SizeDelta: {x: 1832.0957, y: 834.3932}
+  m_AnchoredPosition: {x: -0.013748, y: 0.001976}
+  m_SizeDelta: {x: 1536, y: 595.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966064899121203
 MonoBehaviour:
@@ -1093,14 +1093,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8053369b2594c14d86bedf03902c438, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3f92842dc53afa4cad62800403bfea0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1161,7 +1161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -528.12683, y: 271.84833}
+  m_AnchoredPosition: {x: -589, y: 290.47}
   m_SizeDelta: {x: 511.9229, y: 147.0093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966065042393007
@@ -1189,14 +1189,14 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20aa445101a0db7438f77752411a83be, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 4926804000586491720, guid: 20aa445101a0db7438f77752411a83be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1662966065070959320
@@ -1425,8 +1425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504.818, y: -71.83807}
-  m_SizeDelta: {x: 587.7767, y: 461.9141}
+  m_AnchoredPosition: {x: -589, y: -17}
+  m_SizeDelta: {x: 354.6226, y: 519.7623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966065353660086
 MonoBehaviour:
@@ -1449,17 +1449,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Made in 72h for Ludum Dare 54 (Limited Space) by\nNoirox, Tigerchris and
-    Drop\n\nThanks to \nKire for the Music and SFX and\nAmy for the original Graphics"
+    Drop\n\nThanks to \nKire for the Music and SFX\nAmy for the original Graphics!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20aa445101a0db7438f77752411a83be, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 4926804000586491720, guid: 20aa445101a0db7438f77752411a83be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -25.89
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1662966065353660087
@@ -1544,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -503, y: 99}
+  m_AnchoredPosition: {x: -590, y: 131}
   m_SizeDelta: {x: 318.6583, y: 94.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662966065465258325
