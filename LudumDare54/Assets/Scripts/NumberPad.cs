@@ -51,6 +51,7 @@ public class NumberPad : MonoBehaviour
         if(input.Length == password.Length) {
             if(input == password) {
                 textField.color = Color.green;
+                GetComponent<AudioSource>().Play();
                 ChangeAll();
             } else {
                 //Wrong Input
