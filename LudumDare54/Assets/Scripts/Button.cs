@@ -28,6 +28,7 @@ public class Button : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.CompareTag("Player") && pressedF && !changed) {
+            GetComponent<AudioSource>().Play();
             for(int i = 0; i< interactives.Length; i++) {
                 interactives[i].GetComponent<IInteractive>().Change();
                 changed = true;
