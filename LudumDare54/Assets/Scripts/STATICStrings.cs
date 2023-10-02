@@ -52,4 +52,7 @@ public static class STATICStrings {
 
 
     public static string note3Text =    "Sir, everything is prociding as planned. We have seperated subject 2-11B from the others, everyone else has been infected. Projected chance of survival are >1%. I am arming the security system, don't step inside anyone on sight. The secure access is locked with a button close to this terminal. Smith out.";
+
+     public static string note4Text =    "I locked down the facility. If anyone is still inside, go and unlock the main gate on the left through the security room right above the main door. The key to unlock it is 6942. You will need to unock the security room with the botton on the left corridor. Good luck.";
 }
+
