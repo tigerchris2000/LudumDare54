@@ -8,4 +8,5 @@ public static class STATICStatTracker
     public static int deaths = 0;
     public static int notesRead;
     public static BitArray noteStatuses = new BitArray(noteCount);
+    public static string lastLevel = "";
 }
