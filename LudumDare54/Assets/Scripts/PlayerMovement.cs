@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMovEnabled = true;
     private Dir looking;
     private Vector3 pulledObjectDir;
+    private Camera cam;
     [Header("Animations")]
     [SerializeField] private float animSpeed = 1f;
     [SerializeField] private Sprite[] idle;
@@ -52,9 +53,12 @@ public class PlayerMovement : MonoBehaviour
         rb = player.GetComponent<Rigidbody2D>();
         particleSystem = transform.GetChild(0).gameObject;
         maxSpeed = speed;
+        cam = Camera.main;
     }
     void Update() {
-        
+        Vector3 pos = transform.position;
+        pos.z = -10;
+        cam.transform.position = pos;
         sneak = Input.GetKey(KeyCode.LeftShift);
         // TO DELETE, DEBUG ONLY
         if (Input.GetKeyDown(KeyCode.G)) {
