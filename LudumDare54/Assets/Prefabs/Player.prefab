@@ -161,7 +161,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 115228
+  m_InstanceId: 119624
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -206,6 +206,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   redFlashImage: {fileID: 0}
+  animSpeed: 1
+  idle: []
+  up:
+  - {fileID: 21300000, guid: 4132aca316746cc449870755b896da1d, type: 3}
+  - {fileID: 21300000, guid: d194713f19387c440a7737154a38bd22, type: 3}
+  - {fileID: 21300000, guid: b6b69bef7d8480a4ea049621a3632aa7, type: 3}
+  - {fileID: 21300000, guid: 0fdb1c0db027dc2419c106373e740dc7, type: 3}
+  - {fileID: 21300000, guid: a11d80881924d5e4bab62058775eec53, type: 3}
+  - {fileID: 21300000, guid: 204a6cd5c52a48543ad7ec46609bb2ad, type: 3}
+  - {fileID: 21300000, guid: 80b3cba7df32c2d40a978c4e4ae9824f, type: 3}
+  - {fileID: 21300000, guid: d12a2cf550472e942b238017ed277140, type: 3}
+  down: []
+  left: []
+  right: []
 --- !u!50 &2870507770150803394
 Rigidbody2D:
   serializedVersion: 4
