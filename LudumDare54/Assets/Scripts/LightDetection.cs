@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class LightDetection : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class LightDetection : MonoBehaviour
     private float suriveTime = 0.3f;
     private Camera cam;
     private float camZoom;
+    Image redFlashImage;
 
     private float hits = 0;
     private bool gotHit = false;
@@ -31,6 +33,7 @@ public class LightDetection : MonoBehaviour
         camZoom = cam.orthographicSize;
         player = GameObject.FindGameObjectWithTag("Player");
         lights = GameObject.FindGameObjectsWithTag("Light");
+        redFlashImage = GameObject.FindGameObjectWithTag("rF").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,9 @@ public class LightDetection : MonoBehaviour
             player.GetComponent<PlayerMovement>().Die();
         }
         cam.orthographicSize = camZoom - (hits / suriveTime)*0.25f;
+        Color c = redFlashImage.color;
+	    c.a = (hits / suriveTime) - 0.2f;
+        redFlashImage.color = c;
     }
     void CheckRays() {
         if (!gotHit) {

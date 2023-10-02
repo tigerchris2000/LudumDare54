@@ -60,10 +60,6 @@ public class PlayerMovement : MonoBehaviour
         pos.z = -10;
         cam.transform.position = pos;
         sneak = Input.GetKey(KeyCode.LeftShift);
-        // TO DELETE, DEBUG ONLY
-        if (Input.GetKeyDown(KeyCode.G)) {
-            Die();
-        }
         GetInput();
         Pulling();
         Animation();
@@ -86,15 +82,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     public void Die() {
-	    StartCoroutine(redFlash());
+	    SceneManager.LoadScene("DeathImage");
     }
 
+    // Deprecated
     IEnumerator redFlash() {
         redFlashImage.gameObject.SetActive(true);
         int stepCount = 20;
 	    for (int i = 0; i < stepCount; i++) {
             Color c = redFlashImage.color;
-            Debug.Log("Adding "+(1f/stepCount));
 	        c.a += (float)(1f/stepCount);
             redFlashImage.color = c;
             yield return new WaitForSeconds(0.01f);
