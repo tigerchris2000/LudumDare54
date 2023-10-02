@@ -46,4 +46,10 @@ public static class STATICStrings {
                                         "just in case. It will shoot those bastards down \n"    +
                                         "if they try to escape… \n\n"                           +
                                         "Rodriguez out.";
+
+                                        
+    public static string note3Header =  "Mediacl Officer Ferris Smith reporting to command.";
+
+
+    public static string note3Text =    "Sir, everything is prociding as planned. We have seperated subject 2-11B from the others, everyone else has been infected. Projected chance of survival are >1%. I am arming the security system, don't step inside anyone on sight. The secure access is locked with a button close to this terminal. Smith out.";
 }
