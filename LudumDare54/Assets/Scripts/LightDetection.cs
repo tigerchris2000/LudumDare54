@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -41,7 +42,7 @@ public class LightDetection : MonoBehaviour
     }
     void CheckDeath() {
         if(hits > suriveTime) {
-            print("death");
+            player.GetComponent<PlayerMovement>().Die();
         }
         cam.orthographicSize = camZoom - (hits / suriveTime)*0.25f;
     }
