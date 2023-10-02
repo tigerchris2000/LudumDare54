@@ -1449,7 +1449,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Made in 72h for Ludum Dare 54 (Limited Space) by\nNoirox, Tigerchris and
-    Drop\n\nThanks to \nKire for the Music and SFX\nAmygeddon for the original Graphics!"
+    Drop\n\nThanks to \nKire for the Music and SFX and\nAmygeddon for the original
+    Graphics!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20aa445101a0db7438f77752411a83be, type: 2}
   m_sharedMaterial: {fileID: 4926804000586491720, guid: 20aa445101a0db7438f77752411a83be, type: 2}
@@ -1826,7 +1827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1662966065597974154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1865,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1662966065846497559
 RectTransform:
   m_ObjectHideFlags: 0
