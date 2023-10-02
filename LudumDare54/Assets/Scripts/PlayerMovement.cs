@@ -232,9 +232,12 @@ public class PlayerMovement : MonoBehaviour
             }
             prev = looking;
             particleSystem.SetActive(true);
+            GetComponent<AudioSource>().enabled = true;
+            
         } else {
             gameObject.GetComponent<SpriteRenderer>().sprite = idle[(count%idle.Length)];
             particleSystem.SetActive(false);
+            GetComponent<AudioSource>().enabled = false;
         }
         if(Time.time > animTimer) {
             count++;
