@@ -232,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
             prev = looking;
             particleSystem.SetActive(true);
         } else {
-            gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
+            gameObject.GetComponent<SpriteRenderer>().sprite = idle[(count%idle.Length)];
             particleSystem.SetActive(false);
         }
         if(Time.time > animTimer) {

@@ -19,4 +19,9 @@ public class SceneScript : MonoBehaviour
     public void Adios() {
         Application.Quit();
     }
+    void OnTriggerEnter2D(Collider2D c) {
+        if(c.CompareTag("Player")) {
+            loadScene();
+        }
+    }
 }
