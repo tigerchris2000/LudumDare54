@@ -197,6 +197,7 @@ public class PlayerMovement : MonoBehaviour
     void Animation() {
         if (prev != looking) count = 0;
         if (move.magnitude > 0) {
+            print("if1");
             switch (looking) {
                 case Dir.UP:
                     if (count >= up.Length) count = 0;
@@ -232,6 +233,7 @@ public class PlayerMovement : MonoBehaviour
             prev = looking;
             particleSystem.SetActive(true);
         } else {
+            print("else");
             gameObject.GetComponent<SpriteRenderer>().sprite = idle[count];
             particleSystem.SetActive(false);
         }

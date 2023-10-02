@@ -5622,13 +5622,13 @@ MonoBehaviour:
   idle:
   - {fileID: 7482667652216324306, guid: 9875725e1e8fc1541b975f0af3044dd6, type: 3}
   up:
-  - {fileID: 7482667652216324306, guid: 9875725e1e8fc1541b975f0af3044dd6, type: 3}
+  - {fileID: -2413806693520163455, guid: 37c8c1ae604fcee49944c68159f32e3b, type: 3}
   down:
-  - {fileID: 7482667652216324306, guid: 9875725e1e8fc1541b975f0af3044dd6, type: 3}
+  - {fileID: -2413806693520163455, guid: 37c8c1ae604fcee49944c68159f32e3b, type: 3}
   left:
-  - {fileID: 7482667652216324306, guid: 9875725e1e8fc1541b975f0af3044dd6, type: 3}
+  - {fileID: -2413806693520163455, guid: 37c8c1ae604fcee49944c68159f32e3b, type: 3}
   right:
-  - {fileID: 7482667652216324306, guid: 9875725e1e8fc1541b975f0af3044dd6, type: 3}
+  - {fileID: -2413806693520163455, guid: 37c8c1ae604fcee49944c68159f32e3b, type: 3}
 --- !u!114 &1432377892
 MonoBehaviour:
   m_ObjectHideFlags: 0
