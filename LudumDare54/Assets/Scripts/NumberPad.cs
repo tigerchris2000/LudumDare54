@@ -7,6 +7,7 @@ public class NumberPad : MonoBehaviour
 {
     [SerializeField] private string password = "1234";
     [SerializeField] private GameObject numbers;
+    [SerializeField] private GameObject greenLight;
     [SerializeField] private TMP_Text textField;
     [SerializeField] private GameObject[] interactives;
     private bool pressedF = false;
@@ -52,6 +53,7 @@ public class NumberPad : MonoBehaviour
             if(input == password) {
                 textField.color = Color.green;
                 GetComponent<AudioSource>().Play();
+                greenLight.SetActive(true);
                 ChangeAll();
             } else {
                 //Wrong Input
